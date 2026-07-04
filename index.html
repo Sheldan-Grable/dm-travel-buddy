@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DM Travel Buddy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">Dungeon Master Tool</p>
+      <h1>DM Travel Buddy</h1>
+      <p>
+        Resolve a day of travel with terrain, danger, pace, player rolls,
+        travel outcomes, and possible events.
+      </p>
+
+      <div class="hero-badges">
+        <span>Player Roll Driven</span>
+        <span>Travel Modifiers</span>
+        <span>Outcome Events</span>
+      </div>
+    </section>
+
+    <section class="guide-card">
+      <h2>How to Use</h2>
+      <p>
+        Choose the terrain, danger level, and travel pace. Have a player roll a
+        travel check, then enter the total. The app adds modifiers and resolves
+        the travel outcome.
+      </p>
+
+      <div class="guide-grid">
+        <div>
+          <h3>Outcome Tiers</h3>
+          <ul>
+            <li><strong>1–5:</strong> Disaster</li>
+            <li><strong>6–10:</strong> Hardship</li>
+            <li><strong>11–15:</strong> Quiet Travel</li>
+            <li><strong>16–20:</strong> Opportunity</li>
+            <li><strong>21–25:</strong> Windfall</li>
+            <li><strong>26+:</strong> Legendary Fortune</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Travel Pace Modifiers</h3>
+          <ul>
+            <li><strong>Careful:</strong> +2 to the travel score</li>
+            <li><strong>Normal:</strong> +0 to the travel score</li>
+            <li><strong>Fast:</strong> -2 to the travel score</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Danger Modifiers</h3>
+          <ul>
+            <li><strong>Safe:</strong> +4 to the travel score</li>
+            <li><strong>Tense:</strong> +1 to the travel score</li>
+            <li><strong>Strange:</strong> -1 to the travel score</li>
+            <li><strong>Dangerous:</strong> -3 to the travel score</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Event Results</h3>
+          <ul>
+            <li><strong>Bad results:</strong> Penalties, danger, delays, or difficult choices.</li>
+            <li><strong>Quiet Travel:</strong> No event appears; the day is mostly defined by progress and conditions.</li>
+            <li><strong>Good results:</strong> Benefits, shortcuts, clues, safe rest, or rare fortune.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="field-group">
+        <label for="terrain-select">Terrain</label>
+        <select id="terrain-select">
+          <option value="Road">Road</option>
+          <option value="Forest">Forest</option>
+          <option value="Swamp">Swamp</option>
+          <option value="Mountains">Mountains</option>
+          <option value="Ruins">Ruins</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label for="danger-select">Danger Level</label>
+        <select id="danger-select">
+          <option value="Safe">Safe</option>
+          <option value="Tense">Tense</option>
+          <option value="Dangerous">Dangerous</option>
+          <option value="Strange">Strange</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label for="pace-select">Travel Pace</label>
+        <select id="pace-select">
+          <option value="Normal">Normal</option>
+          <option value="Careful">Careful</option>
+          <option value="Fast">Fast</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label for="roll-total">Player Travel Roll Total</label>
+        <input
+          type="number"
+          id="roll-total"
+          min="1"
+          max="30"
+          placeholder="Enter a roll from 1 to 30"
+        />
+        <p class="help-text">
+          Enter the player's travel check total before modifiers.
+        </p>
+      </div>
+
+      <button id="generate-btn" type="button">Resolve Travel Day</button>
+    </section>
+
+    <section
+      id="result-card"
+      class="result-card hidden"
+      aria-live="polite"
+    >
+      <p id="result-tags" class="result-tags"></p>
+      <h2 id="outcome-heading"></h2>
+      <p id="result-impact" class="score-line"></p>
+
+      <div class="compact-result-grid">
+        <article class="result-section travel-summary-card">
+          <h3>Travel Summary</h3>
+
+          <dl class="summary-list">
+            <div>
+              <dt>Weather</dt>
+              <dd id="result-weather"></dd>
+            </div>
+
+            <div>
+              <dt>Condition</dt>
+              <dd id="result-condition"></dd>
+            </div>
+
+            <div>
+              <dt>Progress</dt>
+              <dd id="result-progress"></dd>
+            </div>
+          </dl>
+        </article>
+
+        <article id="event-section" class="result-section event-card hidden">
+          <h3 id="event-heading">Event</h3>
+          <p id="result-encounter"></p>
+          <p id="result-effect" class="event-effect"></p>
+          <p id="result-prompt" class="dm-prompt-inline"></p>
+        </article>
+
+        <article class="result-section choice-card">
+          <h3>Player Choice</h3>
+          <p id="result-choice"></p>
+        </article>
+      </div>
+
+      <button id="copy-result-btn" class="secondary-btn" type="button">
+        Copy Travel Result
+      </button>
+    </section>
+
+    <footer class="app-footer">
+      <p>Built as part of a fantasy-themed front-end DM toolkit.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

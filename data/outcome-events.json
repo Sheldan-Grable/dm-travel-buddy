@@ -1,0 +1,362 @@
+{
+  "disaster": [
+    {
+      "title": "Supplies Ruined",
+      "terrain": "Any",
+      "description": "A serious travel mishap damages food, water, medicine, or other important supplies.",
+      "effect": "The party loses supplies, takes a resource penalty, or must spend time salvaging what they can.",
+      "dmPrompt": "What specific supply is damaged, and who notices the problem first?"
+    },
+    {
+      "title": "Dangerous Misstep",
+      "terrain": "Any",
+      "description": "The party makes a costly mistake while navigating the route, putting someone directly in danger.",
+      "effect": "The party loses significant time, risks injury, or must overcome an immediate obstacle before continuing.",
+      "dmPrompt": "Who is most exposed when the mistake happens?"
+    },
+    {
+      "title": "Exhaustion Sets In",
+      "terrain": "Any",
+      "description": "The journey wears the party down harder than expected, leaving them drained before the day is done.",
+      "effect": "The party risks exhaustion, reduced watches, or starting the next scene at a disadvantage.",
+      "dmPrompt": "Which character is clearly struggling, and who notices?"
+    },
+    {
+      "title": "Roadside Ambush",
+      "terrain": "Road",
+      "description": "The party stumbles into a prepared ambush along a vulnerable stretch of road.",
+      "effect": "A hostile encounter begins with the enemy holding the better position.",
+      "dmPrompt": "Were the attackers waiting for anyone, or did the party simply look like easy prey?"
+    },
+    {
+      "title": "Bridge Failure",
+      "terrain": "Road",
+      "description": "A bridge, ferry crossing, or raised path gives way at the worst possible moment.",
+      "effect": "The party must find another crossing, repair the route, or risk a dangerous passage.",
+      "dmPrompt": "What makes the crossing impossible to ignore?"
+    },
+    {
+      "title": "Lost in Bad Ground",
+      "terrain": "Forest",
+      "description": "The party loses the trail and wanders into thick, confusing terrain.",
+      "effect": "The party loses major progress and may attract danger while trying to recover the route.",
+      "dmPrompt": "What landmark misled them?"
+    },
+    {
+      "title": "Sinking Route",
+      "terrain": "Swamp",
+      "description": "The party commits to a path that gives way beneath them, turning travel into a desperate scramble.",
+      "effect": "The party risks losing gear, taking exhaustion, or becoming separated.",
+      "dmPrompt": "What does the swamp try to take from them?"
+    },
+    {
+      "title": "Rockslide",
+      "terrain": "Mountains",
+      "description": "Loose stone tears free from above, blocking the path and threatening anyone caught below.",
+      "effect": "The party must escape danger, clear a path, or backtrack through worse terrain.",
+      "dmPrompt": "Was the slide natural, accidental, or triggered?"
+    },
+    {
+      "title": "Collapsed Passage",
+      "terrain": "Ruins",
+      "description": "A section of ruin collapses, sealing the easy path and stirring up old dust, echoes, and danger.",
+      "effect": "The party loses the safe route and must risk a more dangerous way forward.",
+      "dmPrompt": "What sound follows the collapse from somewhere deeper inside?"
+    },
+    {
+      "title": "The Wrong Place",
+      "terrain": "Ruins",
+      "description": "The party realizes too late that they have entered a part of the ruins that was deliberately sealed away.",
+      "effect": "The party triggers a serious hazard, ancient ward, or hostile attention.",
+      "dmPrompt": "What warning sign did they miss until now?"
+    }
+  ],
+  "hardship": [
+    {
+      "title": "Costly Delay",
+      "terrain": "Any",
+      "description": "The party runs into a frustrating delay that does not stop the journey, but makes the day harder.",
+      "effect": "The party loses time or must choose between safety and speed.",
+      "dmPrompt": "What small problem becomes more annoying than expected?"
+    },
+    {
+      "title": "Bad Camp Options",
+      "terrain": "Any",
+      "description": "As the day wears on, every potential campsite has a drawback: exposure, discomfort, poor visibility, or signs of previous danger.",
+      "effect": "The party must accept a weaker campsite or spend extra time finding a better one.",
+      "dmPrompt": "What makes the first campsite clearly unsafe?"
+    },
+    {
+      "title": "Tense Disagreement",
+      "terrain": "Any",
+      "description": "The difficult travel day brings out disagreement about the best route, pace, or risk to take next.",
+      "effect": "The party must choose a direction under pressure, with no perfect option.",
+      "dmPrompt": "What reasonable argument exists on both sides?"
+    },
+    {
+      "title": "Suspicious Travelers",
+      "terrain": "Road",
+      "description": "The party crosses paths with travelers who are not openly hostile, but something about their story does not add up.",
+      "effect": "The party can avoid them, question them, or risk being misled.",
+      "dmPrompt": "What detail gives away that the travelers are hiding something?"
+    },
+    {
+      "title": "Blocked Wagon",
+      "terrain": "Road",
+      "description": "A damaged wagon, fallen load, or stranded group blocks the road ahead.",
+      "effect": "The party must help, go around, wait, or risk angering people nearby.",
+      "dmPrompt": "Is this an honest problem, bait, or the aftermath of something worse?"
+    },
+    {
+      "title": "Trail Vanishes",
+      "terrain": "Forest",
+      "description": "The path grows faint beneath leaves, roots, and undergrowth until the party has to slow down and search.",
+      "effect": "The party loses progress unless they spend effort tracking or scouting.",
+      "dmPrompt": "What clue shows the trail once continued this way?"
+    },
+    {
+      "title": "Biting Insects",
+      "terrain": "Swamp",
+      "description": "Clouds of insects make every stop miserable and every exposed patch of skin a problem.",
+      "effect": "The party must cover up, burn supplies, endure discomfort, or risk poor rest.",
+      "dmPrompt": "What noise or smell seems to attract the swarm?"
+    },
+    {
+      "title": "Trail Turns Against Them",
+      "terrain": "Mountains",
+      "description": "The climb becomes more punishing than expected, with loose footing and poor visibility.",
+      "effect": "The party loses progress unless they slow down or spend resources to continue safely.",
+      "dmPrompt": "What makes turning back unattractive?"
+    },
+    {
+      "title": "Uneasy Silence",
+      "terrain": "Ruins",
+      "description": "The ruins become quiet in a way that makes every movement feel too loud.",
+      "effect": "The party remains safe for now, but risks drawing attention if they move carelessly.",
+      "dmPrompt": "What sound echoes after the party stops moving?"
+    },
+    {
+      "title": "False Landmark",
+      "terrain": "Ruins",
+      "description": "A familiar-looking marker leads the party in the wrong direction through broken stone and dead passages.",
+      "effect": "The party loses time and must decide whether the landmark was accidental or intentionally misleading.",
+      "dmPrompt": "Who would benefit from travelers taking the wrong route?"
+    }
+  ],
+  "opportunity": [
+    {
+      "title": "Useful Shortcut",
+      "terrain": "Any",
+      "description": "The party notices a route that is not obvious at first glance, but could save time.",
+      "effect": "The party may gain extra progress if they accept a manageable risk.",
+      "dmPrompt": "Who or what revealed the shortcut?"
+    },
+    {
+      "title": "Useful Clue",
+      "terrain": "Any",
+      "description": "The party notices a small detail that hints at a nearby danger, route, settlement, faction, or hidden place.",
+      "effect": "The party gains information that may help them avoid trouble or make a better decision later.",
+      "dmPrompt": "What detail would most travelers overlook?"
+    },
+    {
+      "title": "Moment of Rest",
+      "terrain": "Any",
+      "description": "The party finds a brief pocket of comfort: shade, clean water, quiet, or protection from the weather.",
+      "effect": "The party may recover morale, improve their next camp, or remove a minor travel penalty.",
+      "dmPrompt": "Why does this spot feel safer than the surrounding area?"
+    },
+    {
+      "title": "Helpful Traveler",
+      "terrain": "Road",
+      "description": "A friendly traveler shares a warning, rumor, or practical tip about the route ahead.",
+      "effect": "The party gains useful information that can help avoid a future problem.",
+      "dmPrompt": "What does the traveler ask for in return, if anything?"
+    },
+    {
+      "title": "Fresh Road Signs",
+      "terrain": "Road",
+      "description": "Recently repaired signs, stones, or markers help clarify the route ahead.",
+      "effect": "The party avoids delay and may learn which nearby route is safest.",
+      "dmPrompt": "Who has been maintaining this road?"
+    },
+    {
+      "title": "Clear Trail Sign",
+      "terrain": "Forest",
+      "description": "The party finds reliable signs of passage that help confirm the best route forward.",
+      "effect": "The party avoids confusion and may gain a small travel advantage.",
+      "dmPrompt": "Who made the trail signs, and are they still nearby?"
+    },
+    {
+      "title": "Firm Ground",
+      "terrain": "Swamp",
+      "description": "The party discovers a stretch of unexpectedly firm ground through the swamp.",
+      "effect": "The party avoids the worst of the terrain and gains time.",
+      "dmPrompt": "Is the route natural, maintained, or magically preserved?"
+    },
+    {
+      "title": "High Vantage",
+      "terrain": "Mountains",
+      "description": "The party reaches a vantage point with a clear view of the route ahead.",
+      "effect": "The party gains information about nearby dangers, landmarks, or alternate paths.",
+      "dmPrompt": "What important detail can only be seen from above?"
+    },
+    {
+      "title": "Readable Inscription",
+      "terrain": "Ruins",
+      "description": "A weathered inscription gives the party a hint about the ruin, the region, or a safer way through.",
+      "effect": "The party gains a useful clue or avoids a minor hazard.",
+      "dmPrompt": "What part of the inscription is missing?"
+    },
+    {
+      "title": "Useful Remains",
+      "terrain": "Ruins",
+      "description": "Among broken stone and old debris, the party finds something still practical: rope, tools, old markings, or a usable map scrap.",
+      "effect": "The party gains a small resource or advantage for the next obstacle.",
+      "dmPrompt": "Who left it behind, and why was it not taken?"
+    }
+  ],
+  "windfall": [
+    {
+      "title": "Safe Haven",
+      "terrain": "Any",
+      "description": "The party finds a secure place to rest, hidden from danger and sheltered from the worst conditions.",
+      "effect": "The party gains a strong campsite, better rest, or protection from a future complication.",
+      "dmPrompt": "Who used this haven before them?"
+    },
+    {
+      "title": "Valuable Local Knowledge",
+      "terrain": "Any",
+      "description": "The party gains information that changes how they understand the surrounding region.",
+      "effect": "The party may bypass a hazard, discover a safer route, or learn about a nearby opportunity.",
+      "dmPrompt": "What does this information reveal that the party did not know?"
+    },
+    {
+      "title": "Unexpected Aid",
+      "terrain": "Any",
+      "description": "Someone or something nearby makes the journey easier at just the right time.",
+      "effect": "The party gains help, guidance, supplies, or warning before a future problem.",
+      "dmPrompt": "Why is this aid available now?"
+    },
+    {
+      "title": "Abandoned Cache",
+      "terrain": "Road",
+      "description": "The party discovers a hidden travel cache left behind by merchants, scouts, soldiers, or pilgrims.",
+      "effect": "The party gains useful supplies, a map clue, or a small treasure.",
+      "dmPrompt": "Was the cache forgotten, or is someone coming back for it?"
+    },
+    {
+      "title": "Friendly Waystation",
+      "terrain": "Road",
+      "description": "The party finds a small waystation, roadside shrine, toll shelter, or watch post still in usable condition.",
+      "effect": "The party gains safe rest, useful news, or a protected place to regroup.",
+      "dmPrompt": "Who is responsible for keeping this place standing?"
+    },
+    {
+      "title": "Hidden Glade",
+      "terrain": "Forest",
+      "description": "The party discovers a quiet glade with fresh water, soft ground, and signs of natural protection.",
+      "effect": "The party gains excellent rest or a peaceful place to recover.",
+      "dmPrompt": "What small sign suggests the glade is not ordinary?"
+    },
+    {
+      "title": "Dry Causeway",
+      "terrain": "Swamp",
+      "description": "A raised strip of old stone, root, or packed earth cuts safely through the wetland.",
+      "effect": "The party bypasses a difficult stretch and gains major progress.",
+      "dmPrompt": "Who built or preserved the causeway?"
+    },
+    {
+      "title": "Sheltered Pass",
+      "terrain": "Mountains",
+      "description": "The party finds a protected route through the peaks, hidden from wind and falling stone.",
+      "effect": "The party avoids a dangerous section and may reach a better campsite or landmark.",
+      "dmPrompt": "What sign shows this pass was once important?"
+    },
+    {
+      "title": "Ancient Waymarker",
+      "terrain": "Ruins",
+      "description": "The party finds an old marker that reveals a protected route through the surrounding area.",
+      "effect": "The party gains major progress or avoids a dangerous section of travel.",
+      "dmPrompt": "What symbol marks the safe path?"
+    },
+    {
+      "title": "Preserved Chamber",
+      "terrain": "Ruins",
+      "description": "The party discovers a chamber untouched by collapse, weather, or looters.",
+      "effect": "The party gains a safe rest point, important clue, or valuable discovery.",
+      "dmPrompt": "What has kept this chamber protected?"
+    }
+  ],
+  "legendary": [
+    {
+      "title": "Blessed Road",
+      "terrain": "Any",
+      "description": "For a rare stretch of the journey, everything seems to align in the party's favor: weather, terrain, timing, and luck.",
+      "effect": "The party gains a major benefit: exceptional progress, restored morale, a powerful clue, or protection from a future danger.",
+      "dmPrompt": "Does this feel like luck, divine favor, old magic, or something watching over them?"
+    },
+    {
+      "title": "Fateful Ally",
+      "terrain": "Any",
+      "description": "The party meets someone unusually helpful whose arrival feels almost too perfectly timed.",
+      "effect": "The party gains a meaningful ally, guide, warning, or opportunity.",
+      "dmPrompt": "Why is this person exactly where the party needs them to be?"
+    },
+    {
+      "title": "The World Opens",
+      "terrain": "Any",
+      "description": "The party discovers a route, clue, or opportunity that changes the shape of the journey ahead.",
+      "effect": "The party may bypass a major obstacle, reach a destination early, or gain a campaign-level lead.",
+      "dmPrompt": "What new possibility does this reveal?"
+    },
+    {
+      "title": "Pilgrim's Blessing",
+      "terrain": "Road",
+      "description": "The party encounters a rare blessing left by generations of travelers, saints, pilgrims, or grateful survivors.",
+      "effect": "The party gains protection, restored morale, safe passage, or a meaningful omen.",
+      "dmPrompt": "What must the party do to honor the blessing?"
+    },
+    {
+      "title": "Hidden Wonder",
+      "terrain": "Forest",
+      "description": "The party discovers a beautiful hidden place untouched by ordinary travelers.",
+      "effect": "The party gains rare information, magical aid, safe rest, or a story-worthy discovery.",
+      "dmPrompt": "Why has this place remained hidden until now?"
+    },
+    {
+      "title": "The Swamp Gives Back",
+      "terrain": "Swamp",
+      "description": "Against all expectation, the swamp reveals something precious instead of taking something away.",
+      "effect": "The party gains a rare resource, hidden path, rescued NPC, or clue from something preserved in the water.",
+      "dmPrompt": "What did the swamp keep safe, and why now?"
+    },
+    {
+      "title": "The Old Path Opens",
+      "terrain": "Mountains",
+      "description": "A route thought lost or impossible reveals itself through the peaks.",
+      "effect": "The party bypasses a major obstacle or reaches a place few travelers ever see.",
+      "dmPrompt": "What condition caused the path to reveal itself today?"
+    },
+    {
+      "title": "Skyfire Omen",
+      "terrain": "Mountains",
+      "description": "A rare light, starfall, aurora, or stormbreak reveals a secret pattern across the highlands.",
+      "effect": "The party gains a powerful clue, safe route, or supernatural advantage.",
+      "dmPrompt": "Who else might have seen the same omen?"
+    },
+    {
+      "title": "Echo of the Ancients",
+      "terrain": "Ruins",
+      "description": "Something ancient briefly awakens, not as a threat, but as a gift, guide, or revelation.",
+      "effect": "The party gains a powerful clue, blessing, shortcut, or glimpse of forgotten history.",
+      "dmPrompt": "What does the ruin show them that no living person remembers?"
+    },
+    {
+      "title": "Door Beneath the World",
+      "terrain": "Ruins",
+      "description": "The party discovers a hidden threshold that should not have been visible from the surface.",
+      "effect": "The party gains access to a secret place, major shortcut, lost knowledge, or future adventure hook.",
+      "dmPrompt": "Why did the door reveal itself to this party?"
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "weatherTables": {
+    "setback": [
+      "Heavy rain turns the route miserable and difficult to read.",
+      "A bitter wind cuts across the landscape and drains the party's energy.",
+      "Thick fog rolls in, reducing visibility to only a short distance.",
+      "A sudden storm breaks over the party, forcing them to protect supplies and find cover.",
+      "Cold rain soaks clothing and gear, making every mile feel longer than it should.",
+      "The air grows heavy and oppressive, and travel becomes slow, uncomfortable, and tense.",
+      "A harsh weather front rolls in, making navigation difficult and morale worse."
+    ],
+    "complication": [
+      "Light rain begins near midday, making the path slick.",
+      "The sky darkens early, and distant thunder follows the party.",
+      "A cold mist clings to the ground and makes navigation uncertain.",
+      "A steady drizzle dampens gear and makes small tasks more frustrating.",
+      "A strong crosswind picks up, making exposed paths and open ground more difficult.",
+      "The day shifts between brief clearings and sudden showers.",
+      "Low clouds hide landmarks that would normally help the party keep their bearings."
+    ],
+    "standard": [
+      "The weather is ordinary for the region, causing no major issue.",
+      "Clouds pass overhead, but the day remains travelable.",
+      "A steady breeze keeps the journey comfortable enough.",
+      "The day is gray but calm, with no serious threat from the weather.",
+      "The weather changes little throughout the day, allowing predictable travel.",
+      "A mild haze hangs in the air, but visibility remains good enough.",
+      "The party faces typical weather for the terrain and season."
+    ],
+    "advantage": [
+      "Clear skies and favorable wind make the journey easier.",
+      "The weather is calm, giving the party good visibility.",
+      "A cool breeze and dry ground help the party keep a strong pace.",
+      "The morning fog lifts early, revealing the route ahead clearly.",
+      "Mild temperatures help the party travel without tiring quickly.",
+      "A break in poor weather gives the party a welcome window of easy travel.",
+      "Bright daylight and stable conditions make hazards easier to spot."
+    ],
+    "excellent": [
+      "The day is unusually clear, and the route ahead is easy to read.",
+      "Perfect travel weather gives the party a strong sense of momentum.",
+      "The skies open beautifully, revealing landmarks that make navigation simple.",
+      "A rare stretch of ideal weather helps the party move with confidence.",
+      "Sunlight breaks through at just the right times, making the path feel almost guided.",
+      "The air is crisp, visibility is excellent, and the party can see far ahead.",
+      "The weather seems almost supernaturally favorable for travel."
+    ]
+  },
+  "progressTables": {
+    "setback": [
+      "The party makes only half of the expected progress today.",
+      "The party must stop early unless they accept a cost or risk.",
+      "The route becomes so difficult that reaching the destination today is unlikely.",
+      "Repeated delays cost the party most of the day.",
+      "The party loses time backtracking around an obstacle or dangerous stretch."
+    ],
+    "complication": [
+      "The party makes about three-quarters of the expected progress.",
+      "The party can make full progress only by pushing through discomfort or risk.",
+      "A delay costs the party several hours of travel.",
+      "The party stays on course, but the day takes longer than expected.",
+      "The group reaches a usable stopping point, but later than planned."
+    ],
+    "standard": [
+      "The party makes the expected amount of progress.",
+      "The journey stays on schedule.",
+      "The party reaches the next planned point without major delay.",
+      "The route takes roughly as long as expected.",
+      "The party covers normal distance and finds a reasonable place to rest."
+    ],
+    "advantage": [
+      "The party makes slightly better progress than expected.",
+      "Good conditions help the party reach a useful stopping point early.",
+      "The party finds a smoother route and saves time.",
+      "The party avoids a known delay and gains a little extra distance.",
+      "The group travels efficiently and has time to prepare before resting."
+    ],
+    "excellent": [
+      "The party makes excellent progress and may reach the next destination early.",
+      "The party discovers an efficient route that saves significant time.",
+      "The journey goes so smoothly that the party gains extra time before nightfall.",
+      "The party reaches a strong position, safe campsite, or useful landmark ahead of schedule.",
+      "The group gains enough time to scout, rest, or handle a small task before the day ends."
+    ]
+  },
+  "playerChoiceTables": {
+    "setback": [
+      "The party can press forward at a cost, make camp early, or search for a safer route.",
+      "The party must choose between speed, safety, and resource loss.",
+      "The party can avoid the worst of the problem only by changing their plan.",
+      "The party can split attention between solving the travel problem and watching for danger.",
+      "The party must decide whether to spend time recovering or push onward while conditions are bad."
+    ],
+    "complication": [
+      "The party can continue normally with a minor cost or slow down to stay safe.",
+      "The party can investigate the problem or ignore it and risk consequences later.",
+      "The party can push forward or spend time improving their situation.",
+      "The party may choose between losing time now or risking a harder problem later.",
+      "The party can take a cautious route, follow a risky shortcut, or stop to gather information."
+    ],
+    "standard": [
+      "The party can keep moving, investigate a small detail, or make camp as planned.",
+      "The party has room to choose between efficiency and curiosity.",
+      "The party can follow the main route or take time to explore something nearby.",
+      "The party may continue steadily or spend a little time improving their position.",
+      "The party can decide whether to conserve energy or use the stable day to scout ahead."
+    ],
+    "advantage": [
+      "The party can use the good conditions to gain time, scout ahead, or help someone they meet.",
+      "The party can press farther than expected or use the extra time to prepare.",
+      "The party can choose between faster travel and gathering useful information.",
+      "The party may convert the good travel day into extra distance, better rest, or a tactical advantage.",
+      "The party can take advantage of the favorable conditions to avoid a future risk."
+    ],
+    "excellent": [
+      "The party gains a meaningful advantage: extra travel, better positioning, or useful information.",
+      "The party can turn the easy day into preparation for the next challenge.",
+      "The party may choose one bonus: arrive early, avoid danger, or discover something useful.",
+      "The party can use the excellent travel day to create momentum before the next major obstacle.",
+      "The party may gain a free benefit such as a safer camp, a shortcut, or a clue about what lies ahead."
+    ]
+  },
+  "conditionTables": {
+    "Road": {
+      "setback": "The road is damaged, blocked, or nearly washed out.",
+      "complication": "Deep ruts, mud, or traffic make the road slower than expected.",
+      "standard": "The road is passable and mostly predictable.",
+      "advantage": "The road is clear, marked, and easy to follow.",
+      "excellent": "The party finds a well-kept stretch of road or a shortcut."
+    },
+    "Forest": {
+      "setback": "The forest becomes dense, confusing, and difficult to navigate.",
+      "complication": "Roots, brush, and uneven ground slow the party's movement.",
+      "standard": "The forest trail remains clear enough to follow.",
+      "advantage": "Animal paths and natural clearings help guide the party.",
+      "excellent": "The party finds a clean woodland route with strong landmarks."
+    },
+    "Swamp": {
+      "setback": "The swamp turns hostile, with sinking ground and obscured paths.",
+      "complication": "Mud, insects, and standing water slow the party down.",
+      "standard": "The swamp is unpleasant but manageable.",
+      "advantage": "The party finds firmer ground and avoids the worst pools.",
+      "excellent": "The party discovers a surprisingly safe causeway or dry path."
+    },
+    "Mountains": {
+      "setback": "The mountain route becomes steep, unstable, or dangerous.",
+      "complication": "Loose stone and narrow ledges slow the party's climb.",
+      "standard": "The mountain path is difficult but manageable.",
+      "advantage": "Clear visibility helps the party choose an efficient route.",
+      "excellent": "The party finds a protected pass or easier ascent."
+    },
+    "Ruins": {
+      "setback": "The ruins are unstable, confusing, and full of hidden dangers.",
+      "complication": "Collapsed passages and broken stone force careful movement.",
+      "standard": "The party moves through the ruins without major delay.",
+      "advantage": "Old paths, markings, or intact corridors help the party navigate.",
+      "excellent": "The party finds a preserved route through the ruins."
+    }
+  },
+  "minorTravelSigns": {
+    "Road": [
+      {
+        "title": "Dust on the Horizon",
+        "description": "The party sees distant dust from travelers, riders, or wagons, but they never cross paths directly.",
+        "dmPrompt": "Use this as foreshadowing for nearby movement, trade, patrols, or trouble."
+      },
+      {
+        "title": "Old Campfire Ash",
+        "description": "The party finds the remains of a recent campfire beside the road, carefully hidden from casual view.",
+        "dmPrompt": "Who camped here, and why did they not want to be noticed?"
+      },
+      {
+        "title": "Weathered Roadside Charm",
+        "description": "A small charm of twigs and colored thread hangs from a low branch near the road.",
+        "dmPrompt": "Is it a blessing, a warning, or a territorial marker?"
+      },
+      {
+        "title": "Fresh Hoofprints",
+        "description": "A set of fresh hoofprints cuts across the road and disappears toward rougher ground.",
+        "dmPrompt": "Were the riders avoiding the road, chasing someone, or fleeing?"
+      },
+      {
+        "title": "Broken Mile Marker",
+        "description": "A roadside mile marker has been knocked over and cracked down the middle.",
+        "dmPrompt": "Was it damaged by weather, accident, or someone trying to hide the route?"
+      },
+      {
+        "title": "Discarded Travel Cloak",
+        "description": "A torn cloak lies in the ditch beside the road, still damp from recent use.",
+        "dmPrompt": "Did someone abandon it in haste, or was it left as a signal?"
+      }
+    ],
+    "Forest": [
+      {
+        "title": "Broken Ferns",
+        "description": "A patch of ferns has been trampled recently, suggesting something passed through the undergrowth.",
+        "dmPrompt": "Was it game, a traveler, or something hunting?"
+      },
+      {
+        "title": "Birdsong Falls Silent",
+        "description": "For several minutes, the forest becomes unnaturally quiet before slowly returning to normal.",
+        "dmPrompt": "What briefly passed nearby?"
+      },
+      {
+        "title": "Carved Trail Mark",
+        "description": "The party notices a symbol carved into tree bark at shoulder height.",
+        "dmPrompt": "Who uses this mark to navigate the forest?"
+      },
+      {
+        "title": "Old Snare Trap",
+        "description": "A half-rotted snare hangs from a bent sapling, long unused but recently disturbed.",
+        "dmPrompt": "What stepped into it and escaped?"
+      },
+      {
+        "title": "Mushroom Ring",
+        "description": "A perfect ring of pale mushrooms grows beside the trail, untouched by insects or animals.",
+        "dmPrompt": "Is it natural, fey-touched, poisonous, or a local superstition?"
+      },
+      {
+        "title": "Scratch Marks",
+        "description": "Deep scratch marks score the bark of several nearby trees.",
+        "dmPrompt": "Are they territorial markings, signs of panic, or evidence of a creature climbing?"
+      }
+    ],
+    "Swamp": [
+      {
+        "title": "Ripples Without Wind",
+        "description": "The black water nearby ripples in slow circles, though nothing breaks the surface.",
+        "dmPrompt": "Is something below the water, or is the swamp reacting to magic?"
+      },
+      {
+        "title": "Half-Sunken Boot",
+        "description": "A single boot sticks out of the mud, too clean to have been there long.",
+        "dmPrompt": "Where is the owner?"
+      },
+      {
+        "title": "Distant Reed Flute",
+        "description": "A few soft notes drift through the reeds, then stop as soon as the party listens closely.",
+        "dmPrompt": "Who or what is making music in the swamp?"
+      },
+      {
+        "title": "Bitter-Smelling Pool",
+        "description": "A shallow pool gives off a sharp, bitter smell, and nothing grows near its edge.",
+        "dmPrompt": "Is the water poisonous, alchemical, cursed, or simply foul?"
+      },
+      {
+        "title": "Floating Candle",
+        "description": "A small candle floats across the water in a cracked wooden bowl, its flame somehow still lit.",
+        "dmPrompt": "Who set it adrift, and what does it mark?"
+      },
+      {
+        "title": "Crooked Boardwalk",
+        "description": "A narrow stretch of old boardwalk appears ahead, partially hidden by reeds.",
+        "dmPrompt": "Does it lead to safety, an old settlement, or a trap?"
+      }
+    ],
+    "Mountains": [
+      {
+        "title": "Loose Stones",
+        "description": "Pebbles skitter down from a higher ridge, but the party sees no movement above.",
+        "dmPrompt": "Was it natural, or is someone watching from higher ground?"
+      },
+      {
+        "title": "Old Climbing Spike",
+        "description": "A rusted climbing spike has been hammered into the rock beside the trail.",
+        "dmPrompt": "What route did earlier travelers take from here?"
+      },
+      {
+        "title": "Distant Horn Call",
+        "description": "A low horn echoes between the peaks, too far away to identify clearly.",
+        "dmPrompt": "Is it a signal, a warning, or a ritual?"
+      },
+      {
+        "title": "Wind-Carved Cairn",
+        "description": "A small cairn of stacked stones stands beside the trail, each stone marked with a shallow notch.",
+        "dmPrompt": "Is it a grave marker, trail sign, or warning?"
+      },
+      {
+        "title": "Fallen Pack Strap",
+        "description": "A torn leather pack strap lies caught between two rocks.",
+        "dmPrompt": "Was someone climbing, fleeing, or dragged away?"
+      },
+      {
+        "title": "Echoing Crack",
+        "description": "A sharp crack echoes across the slope, but the party cannot immediately tell where it came from.",
+        "dmPrompt": "Is the mountain settling, ice breaking, or something moving above?"
+      }
+    ],
+    "Ruins": [
+      {
+        "title": "Fresh Dust Trail",
+        "description": "A thin trail cuts through the dust, as if something was recently dragged across the stone.",
+        "dmPrompt": "What was moved, and where was it taken?"
+      },
+      {
+        "title": "Cold Stone",
+        "description": "One section of wall feels colder than the surrounding ruins.",
+        "dmPrompt": "Is something hidden behind it, sealed inside it, or passing through it?"
+      },
+      {
+        "title": "Faded Offering Bowl",
+        "description": "A cracked stone bowl sits in an alcove, holding fresh water despite the ruin's age.",
+        "dmPrompt": "Who keeps the bowl filled?"
+      },
+      {
+        "title": "Chipped Statue Face",
+        "description": "A statue's face has been carefully chipped away, while the rest of the figure remains intact.",
+        "dmPrompt": "Who wanted this person forgotten?"
+      },
+      {
+        "title": "Recent Chalk Circle",
+        "description": "A chalk circle has been drawn on the floor of a ruined chamber, still fresh enough to smear.",
+        "dmPrompt": "Was it used for protection, summoning, study, or warning?"
+      },
+      {
+        "title": "Doorway to Nowhere",
+        "description": "A stone doorway stands alone with no wall around it, framing only empty air.",
+        "dmPrompt": "Was it once magical, symbolic, or part of something now missing?"
+      }
+    ]
+  }
+}
