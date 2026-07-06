@@ -3,36 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>DM Travel Buddy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="theme.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="app">
-    <section class="hero">
-      <p class="eyebrow">Dungeon Master Tool</p>
-      <h1>DM Travel Buddy</h1>
-      <p>
-        Resolve a day of travel with terrain, danger, pace, player rolls,
-        travel outcomes, and possible events.
-      </p>
+  <main class="app-shell travel-shell">
+    <header class="site-header">
+      <a class="logo" href="#">
+        <span class="logo-mark">✦</span>
+        <span>DM Toolkit</span>
+      </a>
 
-      <div class="hero-badges">
-        <span>Player Roll Driven</span>
-        <span>Travel Modifiers</span>
-        <span>Outcome Events</span>
+      <nav aria-label="Tool navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="https://sheldan-grable.github.io/portfolio/">Portfolio</a></li>
+          <li><a class="nav-link" href="https://sheldan-grable.github.io/quest-board/">Quest Board</a></li>
+          <li><a class="nav-link" href="https://sheldan-grable.github.io/adventurers-notebook/">Notebook</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero travel-hero arcane-panel">
+      <div class="hero-content">
+        <p class="eyebrow">Travel / Status Console</p>
+        <h1 class="page-title">DM Travel Buddy</h1>
+        <p class="page-description">
+          Resolve a day of overland travel with terrain, danger, pace, player rolls,
+          travel outcomes, and possible events.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#travel-console">Resolve Travel</a>
+          <a class="button button-outline" href="#how-it-works">How It Works</a>
+        </div>
+      </div>
+
+      <div class="travel-hero-panel card">
+        <span class="badge badge-secondary">Current Mode</span>
+        <h2>Outcome Resolver</h2>
+        <p>
+          Player roll plus travel modifiers determines whether the journey becomes
+          a disaster, hardship, quiet day, opportunity, windfall, or legendary fortune.
+        </p>
       </div>
     </section>
 
-    <section class="guide-card">
-      <h2>How to Use</h2>
-      <p>
-        Choose the terrain, danger level, and travel pace. Have a player roll a
-        travel check, then enter the total. The app adds modifiers and resolves
-        the travel outcome.
-      </p>
+    <section id="how-it-works" class="section card guide-card">
+      <div class="card-header">
+        <div>
+          <p class="eyebrow">Procedure</p>
+          <h2 class="section-title">How to Use</h2>
+          <p class="section-description">
+            Choose the travel conditions, enter the player’s travel check total,
+            and let the app resolve the outcome.
+          </p>
+        </div>
+      </div>
 
       <div class="guide-grid">
-        <div>
+        <article class="guide-panel">
           <h3>Outcome Tiers</h3>
           <ul>
             <li><strong>1–5:</strong> Disaster</li>
@@ -42,92 +81,112 @@
             <li><strong>21–25:</strong> Windfall</li>
             <li><strong>26+:</strong> Legendary Fortune</li>
           </ul>
-        </div>
+        </article>
 
-        <div>
-          <h3>Travel Pace Modifiers</h3>
+        <article class="guide-panel">
+          <h3>Travel Pace</h3>
           <ul>
-            <li><strong>Careful:</strong> +2 to the travel score</li>
-            <li><strong>Normal:</strong> +0 to the travel score</li>
-            <li><strong>Fast:</strong> -2 to the travel score</li>
+            <li><strong>Careful:</strong> +2 to travel score</li>
+            <li><strong>Normal:</strong> +0 to travel score</li>
+            <li><strong>Fast:</strong> -2 to travel score</li>
           </ul>
-        </div>
+        </article>
 
-        <div>
-          <h3>Danger Modifiers</h3>
+        <article class="guide-panel">
+          <h3>Danger Level</h3>
           <ul>
-            <li><strong>Safe:</strong> +4 to the travel score</li>
-            <li><strong>Tense:</strong> +1 to the travel score</li>
-            <li><strong>Strange:</strong> -1 to the travel score</li>
-            <li><strong>Dangerous:</strong> -3 to the travel score</li>
+            <li><strong>Safe:</strong> +4 to travel score</li>
+            <li><strong>Tense:</strong> +1 to travel score</li>
+            <li><strong>Strange:</strong> -1 to travel score</li>
+            <li><strong>Dangerous:</strong> -3 to travel score</li>
           </ul>
-        </div>
+        </article>
 
-        <div>
+        <article class="guide-panel">
           <h3>Event Results</h3>
           <ul>
-            <li><strong>Bad results:</strong> Penalties, danger, delays, or difficult choices.</li>
-            <li><strong>Quiet Travel:</strong> No event appears; the day is mostly defined by progress and conditions.</li>
-            <li><strong>Good results:</strong> Benefits, shortcuts, clues, safe rest, or rare fortune.</li>
+            <li><strong>Bad results:</strong> Penalties, danger, delays, or hard choices.</li>
+            <li><strong>Quiet Travel:</strong> No event card appears.</li>
+            <li><strong>Good results:</strong> Benefits, shortcuts, clues, or rare fortune.</li>
           </ul>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section class="controls">
-      <div class="field-group">
-        <label for="terrain-select">Terrain</label>
-        <select id="terrain-select">
-          <option value="Road">Road</option>
-          <option value="Forest">Forest</option>
-          <option value="Swamp">Swamp</option>
-          <option value="Mountains">Mountains</option>
-          <option value="Ruins">Ruins</option>
-        </select>
+    <section id="travel-console" class="section travel-console card card-raised">
+      <div class="console-header">
+        <div>
+          <p class="eyebrow">Input</p>
+          <h2>Travel Console</h2>
+          <p class="text-muted">
+            Set the conditions for today’s journey.
+          </p>
+        </div>
+
+        <span class="badge badge-primary">Arcane Route Check</span>
       </div>
 
-      <div class="field-group">
-        <label for="danger-select">Danger Level</label>
-        <select id="danger-select">
-          <option value="Safe">Safe</option>
-          <option value="Tense">Tense</option>
-          <option value="Dangerous">Dangerous</option>
-          <option value="Strange">Strange</option>
-        </select>
+      <div class="controls-grid">
+        <div class="form-group">
+          <label for="terrain-select">Terrain</label>
+          <select id="terrain-select">
+            <option value="Road">Road</option>
+            <option value="Forest">Forest</option>
+            <option value="Swamp">Swamp</option>
+            <option value="Mountains">Mountains</option>
+            <option value="Ruins">Ruins</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="danger-select">Danger Level</label>
+          <select id="danger-select">
+            <option value="Safe">Safe</option>
+            <option value="Tense">Tense</option>
+            <option value="Dangerous">Dangerous</option>
+            <option value="Strange">Strange</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="pace-select">Travel Pace</label>
+          <select id="pace-select">
+            <option value="Normal">Normal</option>
+            <option value="Careful">Careful</option>
+            <option value="Fast">Fast</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="roll-total">Player Travel Roll Total</label>
+          <input
+            type="number"
+            id="roll-total"
+            min="1"
+            max="30"
+            placeholder="Enter a roll from 1 to 30"
+          />
+          <p class="help-text">
+            Enter the player’s travel check total before modifiers.
+          </p>
+        </div>
       </div>
 
-      <div class="field-group">
-        <label for="pace-select">Travel Pace</label>
-        <select id="pace-select">
-          <option value="Normal">Normal</option>
-          <option value="Careful">Careful</option>
-          <option value="Fast">Fast</option>
-        </select>
-      </div>
-
-      <div class="field-group">
-        <label for="roll-total">Player Travel Roll Total</label>
-        <input
-          type="number"
-          id="roll-total"
-          min="1"
-          max="30"
-          placeholder="Enter a roll from 1 to 30"
-        />
-        <p class="help-text">
-          Enter the player's travel check total before modifiers.
-        </p>
-      </div>
-
-      <button id="generate-btn" type="button">Resolve Travel Day</button>
+      <button id="generate-btn" class="button button-primary full-width" type="button">
+        Resolve Travel Day
+      </button>
     </section>
 
     <section
       id="result-card"
-      class="result-card hidden"
+      class="section result-card card card-raised hidden"
       aria-live="polite"
     >
-      <p id="result-tags" class="result-tags"></p>
+      <div class="result-topline">
+        <p id="result-tags" class="badge badge-secondary result-tags"></p>
+        <span class="result-rune">✦</span>
+      </div>
+
       <h2 id="outcome-heading"></h2>
       <p id="result-impact" class="score-line"></p>
 
@@ -166,13 +225,13 @@
         </article>
       </div>
 
-      <button id="copy-result-btn" class="secondary-btn" type="button">
+      <button id="copy-result-btn" class="button button-outline copy-button" type="button">
         Copy Travel Result
       </button>
     </section>
 
     <footer class="app-footer">
-      <p>Built as part of a fantasy-themed front-end DM toolkit.</p>
+      <p>Built as part of the DM Toolkit — arcane tools for organized Dungeon Masters.</p>
     </footer>
   </main>
 
