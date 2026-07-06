@@ -9,6 +9,7 @@ const resultTags = document.querySelector("#result-tags");
 const outcomeHeading = document.querySelector("#outcome-heading");
 
 const resultImpact = document.querySelector("#result-impact");
+const resultBrief = document.querySelector("#result-brief");
 const resultWeather = document.querySelector("#result-weather");
 const resultCondition = document.querySelector("#result-condition");
 const resultProgress = document.querySelector("#result-progress");
@@ -20,10 +21,17 @@ const resultChoice = document.querySelector("#result-choice");
 const eventSection = document.querySelector("#event-section");
 const eventHeading = document.querySelector("#event-heading");
 const copyResultBtn = document.querySelector("#copy-result-btn");
+const saveResultBtn = document.querySelector("#save-result-btn");
+const clearLogBtn = document.querySelector("#clear-log-btn");
+const logCount = document.querySelector("#log-count");
+const emptyLogMessage = document.querySelector("#empty-log-message");
+const travelLogList = document.querySelector("#travel-log-list");
 
 let travelTables = {};
 let outcomeEvents = {};
 let lastEventTitle = "";
+let currentTravelResult = null;
+let travelLog = loadTravelLog();
 
 const outcomeClassNames = [
   "outcome-disaster",
@@ -73,6 +81,11 @@ Promise.all([
 
 generateBtn.addEventListener("click", resolveTravelDay);
 copyResultBtn.addEventListener("click", copyTravelResult);
+saveResultBtn.addEventListener("click", saveCurrentResult);
+clearLogBtn.addEventListener("click", clearTravelLog);
+travelLogList.addEventListener("click", handleTravelLogClick);
+
+renderTravelLog();
 
 function fetchJson(filePath) {
   return fetch(filePath).then(function (response) {
@@ -118,7 +131,15 @@ function resolveTravelDay() {
   outcomeHeading.textContent = outcome.label;
 
   resultImpact.textContent =
-    `Roll ${baseRoll} ${formatModifier(paceModifier)} pace ${formatModifier(dangerModifier)} danger = ${finalScore}. ${outcome.summary}`;
+  `Final Score: ${finalScore} • Roll ${baseRoll} ${formatModifier(paceModifier)} pace ${formatModifier(dangerModifier)} danger.`;
+
+  resultBrief.textContent = getTravelBrief(
+   outcome,
+   selectedTerrain,
+   selectedDanger,
+   selectedPace,
+   event
+  );
 
   resultWeather.textContent = weather;
   resultCondition.textContent = condition;
@@ -126,6 +147,26 @@ function resolveTravelDay() {
   resultChoice.textContent = choice;
 
   updateEventDisplay(outcome, event);
+
+  currentTravelResult = createTravelLogEntry({
+  terrain: selectedTerrain,
+  danger: selectedDanger,
+  pace: selectedPace,
+  baseRoll: baseRoll,
+  paceModifier: paceModifier,
+  dangerModifier: dangerModifier,
+  finalScore: finalScore,
+  outcome: outcome,
+  brief: resultBrief.textContent,
+  weather: weather,
+  condition: condition,
+  progress: progress,
+  event: event,
+  choice: choice
+});
+
+saveResultBtn.disabled = false;
+saveResultBtn.textContent = "Save to Travel Log";
 }
 
 function getTravelOutcome(finalScore) {
@@ -187,6 +228,33 @@ function getTableKeyForOutcome(outcomeKey) {
   };
 
   return tableKeys[outcomeKey];
+}
+
+function getTravelBrief(outcome, terrain, danger, pace, event) {
+  const terrainText = terrain.toLowerCase();
+  const dangerText = danger.toLowerCase();
+  const paceText = pace.toLowerCase();
+
+  const eventText = event
+    ? ` The travel beat centers on ${event.title}, giving the DM a clear moment to bring to the table.`
+    : "";
+
+  const briefs = {
+    disaster:
+      `The party's ${paceText} pace through ${dangerText} ${terrainText} travel turns against them. The journey creates a serious problem that can cost time, resources, safety, or momentum.${eventText}`,
+    hardship:
+      `Travel through the ${terrainText} becomes difficult, but not disastrous. The party can keep moving, but the day demands a cost, delay, or hard choice.${eventText}`,
+    quiet:
+      `The party moves through the ${terrainText} without a major event. The day stays focused on weather, route conditions, progress, and the choices they make along the way.`,
+    opportunity:
+      `The party handles the journey well and finds a useful opening during ${terrainText} travel. The day creates a small advantage they can act on.${eventText}`,
+    windfall:
+      `The journey through the ${terrainText} turns in the party's favor. They gain a meaningful advantage, useful discovery, safer route, or stronger position before the day is done.${eventText}`,
+    legendary:
+      `The party's travel through the ${terrainText} becomes unusually fortunate. This is the kind of rare travel moment that can shape the session, reveal a major clue, or change the route ahead.${eventText}`
+  };
+
+  return briefs[outcome.key];
 }
 
 function chooseOutcomeEvent(outcomeKey, terrain) {
@@ -262,6 +330,7 @@ function showMessage(tags, heading, message) {
   resultTags.textContent = tags;
   outcomeHeading.textContent = heading;
   resultImpact.textContent = message;
+  resultBrief.textContent = "";
   resultWeather.textContent = "";
   resultCondition.textContent = "";
   resultProgress.textContent = "";
@@ -269,6 +338,9 @@ function showMessage(tags, heading, message) {
   resultEffect.textContent = "";
   resultPrompt.textContent = "";
   resultChoice.textContent = "";
+
+  currentTravelResult = null;
+  saveResultBtn.disabled = true;
 }
 
 function copyTravelResult() {
@@ -291,6 +363,9 @@ ${outcomeHeading.textContent}
 
 Travel Score:
 ${resultImpact.textContent}
+
+Travel Brief:
+${resultBrief.textContent}
 
 Travel Summary:
 Weather: ${resultWeather.textContent}
@@ -327,6 +402,204 @@ function applyOutcomeClass(outcomeKey) {
 
 function clearOutcomeClass() {
   resultCard.classList.remove(...outcomeClassNames);
+}
+
+function createTravelLogEntry(result) {
+  return {
+    id: createLogId(),
+    createdAt: new Date().toLocaleString(),
+    terrain: result.terrain,
+    danger: result.danger,
+    pace: result.pace,
+    baseRoll: result.baseRoll,
+    paceModifier: result.paceModifier,
+    dangerModifier: result.dangerModifier,
+    finalScore: result.finalScore,
+    outcomeKey: result.outcome.key,
+    outcomeLabel: result.outcome.label,
+    brief: result.brief,
+    weather: result.weather,
+    condition: result.condition,
+    progress: result.progress,
+    event: result.event
+      ? {
+          title: result.event.title,
+          description: result.event.description,
+          effect: result.event.effect,
+          dmPrompt: result.event.dmPrompt
+        }
+      : null,
+    choice: result.choice
+  };
+}
+
+function saveCurrentResult() {
+  if (!currentTravelResult) {
+    return;
+  }
+
+  travelLog.unshift(currentTravelResult);
+  saveTravelLog();
+  renderTravelLog();
+
+  saveResultBtn.textContent = "Saved!";
+
+  setTimeout(function () {
+    saveResultBtn.textContent = "Save to Travel Log";
+  }, 1500);
+}
+
+function loadTravelLog() {
+  const savedLog = localStorage.getItem("dmTravelBuddyLog");
+
+  if (!savedLog) {
+    return [];
+  }
+
+  try {
+    return JSON.parse(savedLog);
+  } catch (error) {
+    console.log("Could not load travel log:", error);
+    return [];
+  }
+}
+
+function saveTravelLog() {
+  localStorage.setItem("dmTravelBuddyLog", JSON.stringify(travelLog));
+}
+
+function renderTravelLog() {
+  logCount.textContent = `${travelLog.length} Saved`;
+
+  if (travelLog.length === 0) {
+    emptyLogMessage.classList.remove("hidden");
+    travelLogList.innerHTML = "";
+    clearLogBtn.disabled = true;
+    return;
+  }
+
+  emptyLogMessage.classList.add("hidden");
+  clearLogBtn.disabled = false;
+
+  travelLogList.innerHTML = travelLog
+    .map(function (entry) {
+      const eventMarkup = entry.event
+        ? `
+          <p class="log-event">
+            <strong>${escapeHTML(entry.event.title)}:</strong>
+            ${escapeHTML(entry.event.description)}
+          </p>
+        `
+        : `
+          <p class="log-event text-muted">
+            No event. Quiet travel beat.
+          </p>
+        `;
+
+      return `
+        <article class="log-card" data-log-id="${entry.id}">
+          <div class="log-card-topline">
+            <span class="badge ${getOutcomeBadgeClass(entry.outcomeKey)}">
+              ${escapeHTML(entry.outcomeLabel)}
+            </span>
+
+            <button
+              class="button button-ghost button-small"
+              type="button"
+              data-delete-id="${entry.id}"
+            >
+              Delete
+            </button>
+          </div>
+
+          <h3>${escapeHTML(entry.terrain)} Travel</h3>
+
+          <p class="log-meta">
+            ${escapeHTML(entry.createdAt)} • ${escapeHTML(entry.danger)} • ${escapeHTML(entry.pace)} Pace • Final Score ${entry.finalScore}
+          </p>
+
+          <p>${escapeHTML(entry.brief)}</p>
+
+          ${eventMarkup}
+
+          <details class="log-details">
+            <summary>View details</summary>
+
+            <dl>
+              <div>
+                <dt>Weather</dt>
+                <dd>${escapeHTML(entry.weather)}</dd>
+              </div>
+
+              <div>
+                <dt>Condition</dt>
+                <dd>${escapeHTML(entry.condition)}</dd>
+              </div>
+
+              <div>
+                <dt>Progress</dt>
+                <dd>${escapeHTML(entry.progress)}</dd>
+              </div>
+
+              <div>
+                <dt>Player Choice</dt>
+                <dd>${escapeHTML(entry.choice)}</dd>
+              </div>
+            </dl>
+          </details>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+function handleTravelLogClick(event) {
+  const deleteButton = event.target.closest("[data-delete-id]");
+
+  if (!deleteButton) {
+    return;
+  }
+
+  const idToDelete = deleteButton.dataset.deleteId;
+
+  travelLog = travelLog.filter(function (entry) {
+    return entry.id !== idToDelete;
+  });
+
+  saveTravelLog();
+  renderTravelLog();
+}
+
+function clearTravelLog() {
+  travelLog = [];
+  saveTravelLog();
+  renderTravelLog();
+}
+
+function getOutcomeBadgeClass(outcomeKey) {
+  const badgeClasses = {
+    disaster: "badge-danger",
+    hardship: "badge-warning",
+    quiet: "",
+    opportunity: "badge-success",
+    windfall: "badge-warning",
+    legendary: "badge-primary"
+  };
+
+  return badgeClasses[outcomeKey] || "";
+}
+
+function escapeHTML(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function createLogId() {
+  return `travel-${Date.now()}-${Math.floor(Math.random() * 100000)}`;
 }
 
 function formatModifier(modifier) {

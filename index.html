@@ -189,6 +189,7 @@
 
       <h2 id="outcome-heading"></h2>
       <p id="result-impact" class="score-line"></p>
+      <p id="result-brief" class="travel-brief"></p>
 
       <div class="compact-result-grid">
         <article class="result-section travel-summary-card">
@@ -225,9 +226,41 @@
         </article>
       </div>
 
-      <button id="copy-result-btn" class="button button-outline copy-button" type="button">
-        Copy Travel Result
-      </button>
+      <div class="result-actions">
+        <button id="copy-result-btn" class="button button-outline copy-button" type="button">
+          Copy Travel Result
+        </button>
+
+       <button id="save-result-btn" class="button button-secondary" type="button" disabled>
+         Save to Travel Log
+        </button>
+      </div>
+
+    </section>
+
+    <section id="travel-log-section" class="section card travel-log-section">
+      <div class="travel-log-header">
+        <div>
+          <p class="eyebrow">Session Prep</p>
+          <h2>Travel Log</h2>
+          <p class="text-muted">
+            Save travel results as session-ready beats you can reference later.
+          </p>
+        </div>
+
+        <div class="log-header-actions">
+          <span id="log-count" class="badge badge-secondary">0 Saved</span>
+          <button id="clear-log-btn" class="button button-outline button-small" type="button">
+            Clear Log
+          </button>
+        </div>
+      </div>
+
+      <p id="empty-log-message" class="empty-state">
+        No saved travel results yet. Resolve a travel day, then save it to build your session log.
+      </p>
+
+      <div id="travel-log-list" class="travel-log-list"></div>
     </section>
 
     <footer class="app-footer">
